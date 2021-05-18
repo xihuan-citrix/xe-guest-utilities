@@ -22,7 +22,7 @@ Build Instructions
 
 Type `make` or `make build` to build the xenstore and xe-daemon.
 
-USE $GOPATH to build
+Build with GO111MODULE disabled
 -----------
 e.g. use go1.6.4 to build
 1. Set GOPATH
@@ -34,17 +34,14 @@ e.g. use go1.6.4 to build
 `mkdir -p $GOPATH/src; cd $GOPATH/src`
 
 `git clone git@github.com:xenserver/xe-guest-utilities.git`
+
 3. Disable GO111MODULE
 
 `export GO111MODULE=off`
 
 4. Download golang.org/x/sys
 
-`mkdir -p $GOPATH/src/golang.org/x`
-
-`cd $GOPATH/src/golang.org/x`
-
-`git clone http://github.com/golang/sys.git`
+`go get golang.org/x/sys`
 
 5. Build
 
@@ -52,7 +49,7 @@ e.g. use go1.6.4 to build
 
 `make`
 
-Enable $GO111MODULE to build
+Build with GO111MODULE enabled
 -----------
 e.g. use go1.6.4 to build
 1. Download xe-guest-utilities
